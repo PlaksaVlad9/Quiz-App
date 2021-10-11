@@ -53,7 +53,11 @@ getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
     //go to the end page
-    return window.location.assign("/end.html");
+    // return window.location.assign("/html/end.html");
+
+    let redirect = window.location.href.replace("game", "end");
+    console.log(window.location);
+    return (window.location.href = redirect);
   }
 
   questionCounter++;
