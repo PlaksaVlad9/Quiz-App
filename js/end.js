@@ -28,5 +28,7 @@ const saveHighScore = (e) => {
   highScores.splice(5);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
-  window.location.assign("/html/index.html");
+  // window.location.assign("/html/index.html");
+  let redirect = window.location.href.replace("html/end", "index");
+  return (window.location.href = redirect);
 };
